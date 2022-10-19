@@ -1,0 +1,42 @@
+<app-dropdown class="user-menu">
+    <template v-slot:dropdown-button>
+        <img
+            :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
+            class="user-image img-circle elevation-2"
+            alt="User Image"
+        />
+    </template>
+    <template v-slot:dropdown-menu>
+        <li class="user-header bg-default">
+            <img
+                :src="(user && user.picture) ? user.picture : require('@/assets/img/default-profile.png')"
+                class="img-circle elevation-2"
+                alt="User Image"
+            />
+
+            <p>
+                <span>{{user && user.email}}</span>
+                <small>
+                    <span>{{ $t("labels.memberSince") }}&nbsp;</span>
+                    <span>{{readableCreatedAtDate}}</span>
+                </small>
+            </p>
+        </li>
+        <!-- Menu Footer-->
+        <li class="user-footer">
+            <router-link
+                to="/profile"
+                class="btn btn-default btn-flat"
+                @click="isDropdownOpened = false;"
+            >
+                {{ $t("设置") }}
+            </router-link>
+            <button
+                @click="logout"
+                class="btn btn-default btn-flat  float-right"
+            >
+                {{ $t("退出") }}
+            </button>
+        </li>
+    </template>
+</app-dropdown>

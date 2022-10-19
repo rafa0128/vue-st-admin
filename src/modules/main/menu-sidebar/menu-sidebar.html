@@ -1,0 +1,26 @@
+<aside class="main-sidebar elevation-4" :class="sidebarSkin">
+    <router-link to="/" class="brand-link">
+        <img
+            src="@/assets/img/logo.png"
+            alt="Logo"
+            class="brand-image img-circle elevation-3"
+        />
+        <span class="brand-text font-weight-bold">SMART TEST</span>
+    </router-link>
+
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul
+                class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+            >
+                <app-menu-item
+                    v-for="item in menu"
+                    :menuItem="item"
+                ></app-menu-item>
+            </ul>
+        </nav>
+    </div>
+</aside>

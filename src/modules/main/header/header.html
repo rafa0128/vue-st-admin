@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<nav
+    id="main-header"
+    class="main-header navbar navbar-expand"
+    :class="navbarVariant"
+>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <button class="nav-link" role="button" @click="onToggleMenuSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <router-link to="/" class="nav-link">
+               <i class="fa fa-home"></i>  {{ $t("主页") }}
+            </router-link>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+        <messages-dropdown></messages-dropdown>
+        <notifications-dropdown></notifications-dropdown>
+        <!--<li class="nav-item">-->
+            <!--<a class="nav-link" data-widget="fullscreen" href="#" role="button">-->
+                <!--<i class="fas fa-expand-arrows-alt"></i>-->
+            <!--</a>-->
+        <!--</li>-->
+        <user-dropdown></user-dropdown>
+    </ul>
+</nav>

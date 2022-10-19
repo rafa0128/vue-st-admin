@@ -1,0 +1,73 @@
+<div class="login-card mt-0" style="width: 35%">
+    <div class="login-logo">
+        <img
+            src="@/assets/img/logo.png"
+            alt="Logo"
+            class="img-circle elevation-5"
+            style="width: 15%"
+        />
+    </div>
+    <div class="card card-outline">
+        <div class="card-body">
+            <a-tabs v-model:activeKey="activeKey">
+                <a-tab-pane key="1">
+                    <template #tab>
+                        <span>
+                            <i class="fa fa-lock"></i>
+                            账号登录
+                        </span>
+                    </template>
+                    <form @submit.prevent="loginByAuth">
+                <app-input
+                    icon="envelope"
+                    class="mb-3"
+                    type="email"
+                    placeholder="账号"
+                    autocomplete="off"
+                    v-model="email"
+                />
+                <app-input
+                    icon="lock"
+                    class="mb-3"
+                    type="password"
+                    placeholder="密码"
+                    autocomplete="off"
+                    v-model="password"
+                />
+
+                <div class="row">
+                    <div class="col-7">
+                        <app-checkbox type="icheck" v-model="rememberMe">
+                            {{ $t("记住密码") }}
+                        </app-checkbox>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-5">
+                        <app-button
+                            class="btn-primary"
+                            type="submit"
+                            block="true"
+                            :loading="isAuthLoading"
+                        >
+                            {{ $t("登录") }}
+                        </app-button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+                </a-tab-pane>
+                <a-tab-pane key="2">
+                    <template #tab>
+                        <span>
+                            <i class="fa fa-qrcode"></i>
+                            扫码登录
+                        </span>
+                    </template>
+                    二维码
+                </a-tab-pane>
+            </a-tabs>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
