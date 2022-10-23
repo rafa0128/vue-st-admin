@@ -51,6 +51,6 @@ createApp(App)
     .use(VueWindowSizePlugin)
     .use(Toast, options)
     .use(i18n)
-    .use(Antd)
     .use(ElementPlus)
+    .use(Antd)
     .mount('#app');

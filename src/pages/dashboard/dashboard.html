@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">{{ $t("labels.dashboard") }}</h1>
+                <h1 class="m-0">{{ $t("主页") }}</h1>
             </div>
             <!-- /.col -->
             <div class="col-sm-6">
@@ -11,7 +11,7 @@
                     <li class="breadcrumb-item">
                         <router-link to="/">{{ $t("labels.home") }}</router-link>
                     </li>
-                    <li class="breadcrumb-item active">Dashboard v1</li>
+                    <li class="breadcrumb-item active">主页</li>
                 </ol>
             </div>
             <!-- /.col -->
@@ -24,80 +24,69 @@
 
 <!-- Main content -->
 <section class="content">
-    <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
+      <div class="container-fluid">
+        <!-- Info boxes -->
         <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>150</h3>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
-                        <p>New Orders</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <router-link to="/" class="small-box-footer"
-                        >More info <i class="fas fa-arrow-circle-right"></i
-                    ></router-link>
-                </div>
+              <div class="info-box-content">
+                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-number">
+                  10
+                  <small>%</small>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
-                        <p>Bounce Rate</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <router-link to="/" class="small-box-footer"
-                        >More info <i class="fas fa-arrow-circle-right"></i
-                    ></router-link>
-                </div>
+              <div class="info-box-content">
+                <span class="info-box-text">Likes</span>
+                <span class="info-box-number">41,410</span>
+              </div>
+              <!-- /.info-box-content -->
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                    <div class="inner">
-                        <h3>44</h3>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
 
-                        <p>User Registrations</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <router-link to="/" class="small-box-footer"
-                        >More info <i class="fas fa-arrow-circle-right"></i
-                    ></router-link>
-                </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-danger">
-                    <div class="inner">
-                        <h3>65</h3>
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
 
-                        <p>Unique Visitors</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <router-link to="/" class="small-box-footer"
-                        >More info <i class="fas fa-arrow-circle-right"></i
-                    ></router-link>
-                </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Sales</span>
+                <span class="info-box-number">760</span>
+              </div>
+              <!-- /.info-box-content -->
             </div>
-            <!-- ./col -->
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">New Members</span>
+                <span class="info-box-number">2,000</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
         </div>
         <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
+      </div>
 </section>
-<!-- /.content -->

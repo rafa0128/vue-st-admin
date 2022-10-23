@@ -22,23 +22,25 @@ export default class MenuSidebar extends Vue {
 export const MENU = [
     {
         name: '主页',
-        icon: 'fa-home',
+        icon: 'fas fa-home',
         path: '/'
     },
     {
-        name: 'labels.blank',
+        name: '接口测试',
+        icon: 'fas fa-server',
         path: '/blank'
     },
     {
-        name: 'labels.mainMenu',
+        name: '反馈日志',
+        icon: 'fas fa-file',
         children: [
             {
-                name: 'labels.subMenu',
+                name: 'APP日志',
                 path: '/sub-menu-1'
             },
 
             {
-                name: 'labels.blank',
+                name: '服务端日志',
                 path: '/sub-menu-2'
             }
         ]

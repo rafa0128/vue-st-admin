@@ -4,7 +4,9 @@
         :class="{'active': isMainActive || isOneOfChildrenActive}"
         @click="handleMainMenuAction"
     >
-        <i class="nav-icon fas {{ $t(menuItem.icon) }}"></i>
+        <i class="nav-icon"
+           :class="menuItem.icon"
+        ></i>
         <p>{{ $t(menuItem.name) }}</p>
         <i v-if="isExpandable" class="right fas fa-angle-left"></i>
     </a>
