@@ -1,8 +1,8 @@
+/* eslint-disable */
 import {createApp} from 'vue';
 import App from './app/app.vue';
 import router from './router';
 import store from './store';
-
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +15,8 @@ import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
-
+// import Antd from 'ant-design-vue';
+// import 'ant-design-vue/dist/antd.css';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 
@@ -44,7 +43,8 @@ const i18n = createI18n({
     fallbackLocale: 'en'
 });
 
-createApp(App)
+
+const app = createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(store)
     .use(router)
@@ -52,5 +52,4 @@ createApp(App)
     .use(Toast, options)
     .use(i18n)
     .use(ElementPlus)
-    .use(Antd)
     .mount('#app');

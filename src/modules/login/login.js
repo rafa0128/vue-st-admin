@@ -1,4 +1,5 @@
 import { __awaiter, __generator } from "tslib";
+/* eslint-disable */
 import { loginByAuth } from '@/services/auth';
 import Checkbox from '@/components/checkbox/checkbox.vue';
 import Input from '@/components/input/input.vue';
@@ -29,16 +30,15 @@ export default defineComponent({
                 type: 'success',
             });
         };
-        var toastError = function () {
+        var toastError = function (content) {
             ElMessage({
-                message: '登录异常',
+                message: content,
                 type: 'error',
             });
         };
         onMounted(function () {
             email.value = 'admin@example.com';
             password.value = 'admin';
-            console.log(email);
             appElement = document.getElementById('app');
             appElement.classList.add('login-page');
         });
@@ -50,7 +50,8 @@ export default defineComponent({
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 2, , 3]);
+                        _a.trys.push([0, 4, , 5]);
+                        if (!(email.value && password.value)) return [3 /*break*/, 2];
                         loading.value = true;
                         return [4 /*yield*/, loginByAuth(email.value, password.value)];
                     case 1:
@@ -60,11 +61,15 @@ export default defineComponent({
                         loading.value = false;
                         return [3 /*break*/, 3];
                     case 2:
+                        toastError('账号和密码不能为空');
+                        _a.label = 3;
+                    case 3: return [3 /*break*/, 5];
+                    case 4:
                         error_1 = _a.sent();
-                        toastError();
+                        toastError('登录异常');
                         loading.value = false;
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
+                        return [3 /*break*/, 5];
+                    case 5: return [2 /*return*/];
                 }
             });
         }); };

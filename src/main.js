@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createApp } from 'vue';
 import App from './app/app.vue';
 import router from './router';
@@ -14,8 +15,8 @@ import en from './translation/en.json';
 import es from './translation/es.json';
 import tr from './translation/tr.json';
 import './index.scss';
-import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+// import Antd from 'ant-design-vue';
+// import 'ant-design-vue/dist/antd.css';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 library.add(faLock, faEnvelope, faFacebook, faGooglePlus);
@@ -38,7 +39,7 @@ var i18n = createI18n({
     messages: { en: en, es: es, tr: tr },
     fallbackLocale: 'en'
 });
-createApp(App)
+var app = createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .use(store)
     .use(router)
@@ -46,6 +47,5 @@ createApp(App)
     .use(Toast, options)
     .use(i18n)
     .use(ElementPlus)
-    .use(Antd)
     .mount('#app');
 //# sourceMappingURL=main.js.map

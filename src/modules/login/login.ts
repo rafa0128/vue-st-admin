@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {loginByAuth} from '@/services/auth';
 import Checkbox from '@/components/checkbox/checkbox.vue';
 import Input from '@/components/input/input.vue';
@@ -27,16 +28,15 @@ export default defineComponent({
                 type: 'success',
             });
         };
-        const toastError = () => {
+        const toastError = (content:string) => {
             ElMessage({
-                message: '登录异常',
+                message: content,
                 type: 'error',
             });
         };
         onMounted(() => {
             email.value = 'admin@example.com';
             password.value = 'admin';
-            console.log(email);
             appElement = document.getElementById('app') as HTMLElement;
             appElement.classList.add('login-page');
         });
@@ -46,13 +46,18 @@ export default defineComponent({
 
         const loginByaccount = async () => {
             try {
-                loading.value = true;
-                const token = await loginByAuth(email.value, password.value);
-                store.dispatch('auth/login', token);
-                toastSuccess();
-                loading.value = false;
+                if(email.value && password.value){
+                    loading.value = true;
+                    const token = await loginByAuth(email.value, password.value);
+                    store.dispatch('auth/login', token);
+                    toastSuccess();
+                    loading.value = false;
+                }else {
+                    toastError('账号和密码不能为空');
+                }
+
             } catch (error: any) {
-                toastError();
+                toastError('登录异常');
                 loading.value = false;
             }
         };
