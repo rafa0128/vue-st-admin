@@ -6,6 +6,11 @@ import Login from '@/modules/login/login.vue';
 import Register from '@/modules/register/register.vue';
 
 import Dashboard from '@/pages/dashboard/dashboard.vue';
+import ApiManualTest from '@/pages/service-test/api-manual-test/api-manual-test.vue';
+import ApiAutomationTest from '@/pages/service-test/api-automation-test/api-automation-test.vue';
+import ApiStressTest from '@/pages/service-test/api-stress-test/api-stress-test.vue';
+import ServiceMonitor from '@/pages/service-test/service-monitor/service-monitor.vue';
+
 import Profile from '@/pages/profile/profile.vue';
 import ForgotPassword from '@/modules/forgot-password/forgot-password.vue';
 import RecoverPassword from '@/modules/recover-password/recover-password.vue';
@@ -55,13 +60,45 @@ const routes: Array<RouteRecordRaw> = [
                 }
             },
             {
-                path: '',
+                path: 'home',
                 name: 'Dashboard',
                 component: Dashboard,
                 meta: {
                     requiresAuth: true
                 }
+            },
+            {
+                path: 'service-test/api-manual-test',
+                name: 'ApiManualTest',
+                component: ApiManualTest,
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: 'service-test/api-automation-test',
+                name: 'ApiAutomationTest',
+                component: ApiAutomationTest,
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: 'service-test/api-stress-test',
+                name: 'ApiStressTest',
+                component: ApiStressTest,
+                meta: {
+                    requiresAuth: true
+                }
+            },{
+                path: 'service-test/service-monitor',
+                name: 'ServiceMonitor',
+                component: ServiceMonitor,
+                meta: {
+                    requiresAuth: true
+                }
             }
+
         ]
     },
     {

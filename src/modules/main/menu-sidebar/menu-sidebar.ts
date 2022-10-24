@@ -23,12 +23,30 @@ export const MENU = [
     {
         name: '主页',
         icon: 'fas fa-home',
-        path: '/'
+        path: '/home'
     },
     {
         name: '服务端测试',
         icon: 'fas fa-server',
-        path: '/blank'
+        children: [
+            {
+                name: '手工测试',
+                path: '/service-test/api-manual-test'
+            },
+
+            {
+                name: '自动化测试',
+                path: '/service-test/api-automation-test'
+            },
+            {
+                name: '压力测试',
+                path: '/service-test/api-stress-test'
+            },
+            {
+                name: '服务监控',
+                path: '/service-test/service-monitor'
+            }
+        ]
     },
     {
         name: '客户端测试',
