@@ -1,36 +1,23 @@
-<h1 align="center">SMART VUE ADMIN</h1>
+<p align="center">
+<a href="#">
+<img src="https://cdn.nlark.com/yuque/0/2022/png/153412/1666581960720-e3213e6a-2d1f-4886-988e-0bb662353deb.png" alt="vue-st-admin" width="100">
+</a>
+<br>
 
+## Vue ST Admin
 基于Vue3实现的测试技术前端方案
 
-默认登录账号
+<img src="https://cdn.nlark.com/yuque/0/2022/png/153412/1666581782704-17f22ece-5dca-48d4-ba70-12318b38bc66.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0" alt="vue-st-admin">
 
-`账号:` admin@example.com<br />
-`密码:` admin<br />
-
-## 安装
-
+## Installation
 ```
-npm install
+yarn install
 ```
-
-### 编译
-
+### Build
 ```
-npm run build
+yarn build
 ```
-
-### 测试
-
+### Run localy
 ```
-npm run test:unit
+yarn serve
 ```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).

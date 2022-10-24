@@ -1,4 +1,4 @@
-<li class="nav-item" :class="{'menu-open': isMenuExtended}">
+<li class="nav-item has-treeview" :class="{'menu-open': isMenuExtended}">
     <a
         class="nav-link"
         :class="{'active': isMainActive || isOneOfChildrenActive}"
@@ -18,7 +18,7 @@
                 exact
                 exact-active-class="active"
             >
-                <i class="far fa-circle nav-icon"></i>
+                <i class="far fa-circle nav-icon text-warning"></i>
                 <p>{{ $t(item.name) }}</p>
             </router-link>
         </li>

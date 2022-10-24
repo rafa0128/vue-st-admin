@@ -26,12 +26,22 @@ export const MENU = [
         path: '/'
     },
     {
-        name: '接口测试',
+        name: '服务端测试',
         icon: 'fas fa-server',
         path: '/blank'
     },
     {
-        name: '反馈日志',
+        name: '客户端测试',
+        icon: 'fa fa-mobile',
+        path: '/sub-menu-1'
+    },
+    {
+        name: 'WEB端测试',
+        icon: 'fas fa-globe',
+        path: '/sub-menu-2'
+    },
+    {
+        name: '日志上报',
         icon: 'fas fa-file',
         children: [
             {
@@ -44,5 +54,25 @@ export const MENU = [
                 path: '/sub-menu-2'
             }
         ]
-    }
+    },
+    {
+        name: '测试工具',
+        icon: 'fas fa-wrench',
+        path: '/sub-menu-2'
+    },
+    {
+        name: '代码生成器',
+        icon: 'fas fa-code',
+        path: '/sub-menu-2'
+    },
+    {
+        name: '个人设置',
+        icon: 'fas fa-cog',
+        path: '/sub-menu-2'
+    },
+    {
+        name: '用户管理',
+        icon: 'fas fa-user',
+        path: '/sub-menu-2'
+    },
 ];
