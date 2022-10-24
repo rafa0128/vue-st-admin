@@ -15,3 +15,42 @@
         </div>
     </div>
 </div>
+<section class="content">
+    <el-card class="box-card">
+        <template #header>
+            <el-select v-model="value" filterable placeholder="请选择项目">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-select v-model="value" filterable placeholder="请选择环境" style="margin-left: 10px">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-select v-model="value" filterable placeholder="请选择模块" style="margin-left: 10px">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-select v-model="value" filterable placeholder="请选择接口" style="margin-left: 10px">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+        </template>
+        <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div>
+    </el-card>
+</section>

@@ -2,7 +2,7 @@ import router from '@/router/index';
 export default {
     login: function (context, payload) {
         context.commit('setToken', payload);
-        router.replace('/');
+        router.replace('/home');
     },
     getUser: function (context, payload) {
         context.commit('setUser', payload);
