@@ -16,7 +16,7 @@
     </div>
 </div>
 <section class="content">
-    <el-card class="box-card">
+    <el-card class="box-card mb-3">
         <template #header>
             <el-select v-model="value" filterable placeholder="请选择项目">
                 <el-option
@@ -50,7 +50,38 @@
                         :value="item.value"
                 />
             </el-select>
+            <el-button type="primary" class="ml-4">请求</el-button>
+            <el-button type="success">解密</el-button>
+            <el-button type="danger">对比</el-button>
         </template>
-        <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div>
+        <Codemirror
+                v-model:value="code"
+                :options="cmOptions"
+                border
+                placeholder="请输入请求报文"
+                :height="300"
+                @change="onChange"
+        />
+        <el-page-header :icon="null" title="Response">
+            <template #content>
+                <div class="flex items-center">
+                    <span
+            class="text-sm mr-2"
+            style="color: var(--el-text-color-regular)"
+          >
+            code
+          </span>
+                    <el-tag>200</el-tag>
+                </div>
+            </template>
+            <template #extra>
+                <div class="flex items-center">
+                    <el-button type="primary" size="small" class="ml-2">复制</el-button>
+                </div>
+            </template>
+            <el-descriptions :column="3" size="small" class="mt-4"></el-descriptions>
+
+        </el-page-header>
+        <vue-json-pretty :data="{ key: 'value' }" :showIcon="true" />
     </el-card>
 </section>

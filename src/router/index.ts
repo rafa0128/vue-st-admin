@@ -23,6 +23,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/',
         name: 'Main',
         component: Main,
+        redirect: '/home'
+    },
+    {
+        path: '/',
+        name: 'Main',
+        component: Main,
         meta: {
             requiresAuth: true
         },
@@ -146,10 +152,13 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+    if(to.path == '/'){
+        next('/home');
+    }
     if (to.meta.requiresAuth && !store.getters['auth/token']) {
         next('/login');
     } else if (to.meta.requiresUnauth && !!store.getters['auth/token']) {
-        next('/');
+        next('/home');
     } else {
         next();
     }

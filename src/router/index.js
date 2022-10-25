@@ -19,6 +19,12 @@ var routes = [
         path: '/',
         name: 'Main',
         component: Main,
+        redirect: '/home'
+    },
+    {
+        path: '/',
+        name: 'Main',
+        component: Main,
         meta: {
             requiresAuth: true
         },
@@ -139,11 +145,14 @@ var router = createRouter({
     routes: routes
 });
 router.beforeEach(function (to, from, next) {
+    if (to.path == '/') {
+        next('/home');
+    }
     if (to.meta.requiresAuth && !store.getters['auth/token']) {
         next('/login');
     }
     else if (to.meta.requiresUnauth && !!store.getters['auth/token']) {
-        next('/');
+        next('/home');
     }
     else {
         next();
