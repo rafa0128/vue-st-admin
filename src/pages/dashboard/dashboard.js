@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { defineComponent, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import * as echarts from 'echarts';
-export default defineComponent({
+export default ({
     name: 'Dashboad',
     setup: function () {
         var echart = echarts;
@@ -12,6 +12,8 @@ export default defineComponent({
             echart.dispose;
         });
         function initChart() {
+            var command_edom = document.getElementById("myEcharts");
+            command_edom.removeAttribute("_echarts_instance_");
             var chart = echart.init(document.getElementById('myEcharts'), 'vintage');
             chart.setOption({
                 xAxis: {

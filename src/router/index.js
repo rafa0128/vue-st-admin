@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import store from '@/store/index';
 import Main from '@/modules/main/main.vue';
 import Login from '@/modules/login/login.vue';
@@ -141,7 +141,7 @@ var routes = [
     }
 ];
 var router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHashHistory(process.env.BASE_URL),
     routes: routes
 });
 router.beforeEach(function (to, from, next) {
