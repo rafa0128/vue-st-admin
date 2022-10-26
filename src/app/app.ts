@@ -1,22 +1,19 @@
-import {calculateWindowSize} from '@/utils/helpers';
-import {Options, Vue} from 'vue-class-component';
+import { ref, provide, nextTick } from 'vue-demi'
+import {defineComponent} from 'vue';
 
-@Options({
-    watch: {
-        currentWindowSize: (value) => {
-            console.log(value);
-        }
-    }
-})
-export default class App extends Vue {
-    get currentWindowSize() {
-        if (this.$store.getters['ui/screenSize'] !== this.windowSize) {
-            this.$store.dispatch('ui/setWindowSize', this.windowSize);
-        }
-        return this.windowSize;
-    }
+export default defineComponent({
+    name: 'App',
+    setup() {
+        const isRouterActive = ref(true);
 
-    get windowSize() {
-        return calculateWindowSize(this.$windowWidth);
+        provide('reload', () => {
+            isRouterActive.value = false;
+            nextTick(() => {
+                isRouterActive.value = true;
+            })
+        });
+        return{
+            isRouterActive
+        };
     }
-}
+});
