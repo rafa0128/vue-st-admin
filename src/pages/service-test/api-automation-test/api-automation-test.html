@@ -15,3 +15,53 @@
         </div>
     </div>
 </div>
+
+<section class="content">
+    <el-card class="box-card mb-3">
+        <template #header>
+            <el-select v-model="value" filterable placeholder="请选择项目">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-select v-model="value" filterable placeholder="请选择任务" style="margin-left: 10px">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-select v-model="value" filterable placeholder="请选择状态" style="margin-left: 10px">
+                <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                />
+            </el-select>
+            <el-button type="primary" :icon="Search" class="ml-4">查询</el-button>
+            <el-button color="#626aef" :dark="isDark" :icon="Plus">创建任务</el-button>
+        </template>
+        <el-table :data="tableData" style="width: 100%" class="mb-3" >
+            <el-table-column align="center" fixed prop="project" label="项目" width="120" />
+            <el-table-column align="center" prop="task" label="任务名称" width="200" />
+            <el-table-column align="center" prop="status" label="任务状态" width="100" />
+            <el-table-column align="center" prop="time_rule" label="执行时间" width="200" />
+            <el-table-column align="center" prop="utime" label="更新时间" width="250" />
+            <el-table-column align="center" prop="creater" label="创建人" width="120" />
+            <el-table-column fixed="right" label="操作" width="150">
+                <template #default>
+                    <el-button link type="primary" size="small" @click="handleClick">查看</el-button>
+                    <el-button link type="success" size="small">编辑</el-button>
+                    <el-button link type="danger" size="small">删除</el-button>
+                </template>
+            </el-table-column>
+        </el-table>
+        <el-pagination background layout="prev, pager, next" :total="1000" />
+    </el-card>
+
+</section>
